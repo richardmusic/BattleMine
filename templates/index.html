@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="battlemine.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js"></script>
+    <script type="text/javascript">
+        function logClick(event) {
+            console.log("Button clicked:", event.target.id);
+        }
+
+        function playFireAudio() {
+            var audio = document.getElementById("fireAudio").cloneNode();
+            audio.play();
+        }
+
+        function playGreenAudio() {
+            var audio = document.getElementById("greenAudio").cloneNode();
+            audio.play();
+        }
+
+        function playRedAudio() {
+            var audio = document.getElementById("redAudio").cloneNode();
+            audio.play();
+        }
+
+        function playClickAudio() {
+            var audio = document.getElementById("clickAudio").cloneNode();
+            audio.play();
+        }
+
+        function playSelectAudio() {
+            var audio = document.getElementById("selectAudio").cloneNode();
+            audio.play();
+        }
+
+        function playComputeAudio() {
+            var audio = document.getElementById("computeAudio").cloneNode();
+            audio.play();
+        }
+
+        function playMusic() {
+            var audio = document.getElementById("musicAudio");
+            audio.play();
+            audio.addEventListener('ended', function () {
+                audio.currentTime = 0;
+                audio.play();
+            });
+        }
+
+        function toggleMute() {
+            var audio = document.getElementById("musicAudio");
+            var muteButton = document.getElementById("muteButton");
+            audio.muted = !audio.muted;
+            if (audio.muted) {
+                muteButton.src = "/static/img/playAA.png";
+            } else {
+                muteButton.src = "/static/img/muteAA.png";
+            }
+        }
+        function showFireButton() {
+            var fireButton = document.getElementById("fire");
+            fireButton.classList.add("visible");
+        }
+
+        function showFireBlueButton() {
+            var fireBlue = document.getElementById("fireblue");
+            fireBlue.style.visibility = "visible";
+        }
+
+        function checkSelections() {
+            var selections = document.querySelectorAll('.selection img.visible').length;
+            if (selections === 3) {
+                setTimeout(showFireButton, 1000);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var selectionButtons = document.querySelectorAll('.selection img');
+            selectionButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    button.classList.add('visible');
+                    checkSelections();
+                });
+            });
+        });
+
+        function minimize() {
+            var fireButton = document.getElementById("fire");
+            var fireBlue = document.getElementById("fireblue");
+
+            fireBlue.style.visibility = "visible"; // Show fireblue behind fire button
+
+            fireButton.style.transform = "scale(0.95)";
+            fireButton.style.transition = "transform 0.15s";
+
+            setTimeout(function () {
+                fireButton.style.transform = "scale(1)";
+            }, 150);
+        }
+        function toggleVisibilityIntro() {
+        var img = document.getElementById('intro2');
+        if (img.style.visibility === 'hidden') {
+            img.style.visibility = 'visible';
+        } else {
+            img.style.visibility = 'hidden';
+        }
+    }
+
+    function toggleVisibilityPlayMusic() {
+        var img = document.getElementById('playMusic');
+        if (img.style.visibility === 'hidden') {
+            img.style.visibility = 'visible';
+        } else {
+            img.style.visibility = 'hidden';
+        }
+    }
+    function toggleVisibilityPlayText() {
+        var img = document.getElementById('playText');
+        if (img.style.visibility === 'hidden') {
+            img.style.visibility = 'visible';
+        } else {
+            img.style.visibility = 'hidden';
+        }
+    }
+ 
+    </script>
+</head>
+<body onload="brython()">
+    <div class="boardred">
+        <div class="red" id="cell1Ar"></div>
+        <div class="red" id="cell1Br"></div>
+        <div class="red" id="cell1Cr"></div>
+        <div class="red" id="cell2Ar"></div>
+        <div class="red" id="cell2Br"></div>
+        <div class="red" id="cell2Cr"></div>
+        <div class="red" id="cell3Ar"></div>
+        <div class="red" id="cell3Br"></div>
+        <div class="red" id="cell3Cr"></div>
+    </div>
+    <div class="boardgreen">
+        <div class="green" id="cell1Ag"></div>
+        <div class="green" id="cell1Bg"></div>
+        <div class="green" id="cell1Cg"></div>
+        <div class="green" id="cell2Ag"></div>
+        <div class="green" id="cell2Bg"></div>
+        <div class="green" id="cell2Cg"></div>
+        <div class="green" id="cell3Ag"></div>
+        <div class="green" id="cell3Bg"></div>
+        <div class="green" id="cell3Cg"></div>
+    </div>
+    <div class="numbers">
+        <div class="n1A"></div>
+        <div class="n1B"></div>
+        <div class="n1C"></div>
+        <div class="n2A"></div>
+        <div class="n2B"></div>
+        <div class="n2C"></div>
+        <div class="n3A"></div>
+        <div class="n3B"></div>
+        <div class="n3C"></div>
+    </div>
+    <div class="selection">
+        <div id="s1A"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s1B"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s1C"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s2A"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s2B"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s2C"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s3A"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s3B"><img src="/static/img/selection.png" alt="Selection"></div>
+        <div id="s3C"><img src="/static/img/selection.png" alt="Selection"></div>
+    </div>
+    <div id="buttons">
+        <button id="_1A"></button>
+        <button id="_1B"></button>
+        <button id="_1C"></button>
+        <button id="_2A"></button>
+        <button id="_2B"></button>
+        <button id="_2C"></button>
+        <button id="_3A"></button>
+        <button id="_3B"></button>
+        <button id="_3C"></button>
+    </div>
+    <div class="intro2"><img id="intro2" src="/static/img/intro2.png" onclick="toggleVisibilityIntro(); playMusic(); toggleVisibilityPlayMusic(); toggleVisibilityPlayText();"></div>
+    <div class="terminal2"><img id="terminal2" src="/static/img/terminal2a.png" ></div>
+    <div class="terminal2aHit"><img id="terminal2aHit" src="/static/img/terminal2aHit.png" ></div>
+    <div class="terminal2aMiss"><img id="terminal2aMiss" src="/static/img/terminal2aMiss.png" ></div>
+    <div class="terminal2aIncoming"><img id="terminal2aIncoming" src="/static/img/terminal2aIncoming.png" ></div>
+    <div class="terminal1"><img id="terminal1" src="/static/img/Terminal1a.png" ></div>
+    <div class="terminal1aIncoming"><img id="terminal1aIncoming" src="/static/img/terminal1aIncoming.png" ></div>
+    <div class="fire"><img id="fire" src="/static/img/fire3.png" onclick="playFireAudio(); minimize();"></div>
+    <div class="fireblue"><img id="fireblue" src="/static/img/fireblue.png"></div>
+    <div class="playmusic"><img id="playMusic" src="/static/img/playAA.png" onclick="playMusic(); toggleVisibilityIntro();toggleVisibilityPlayMusic();toggleVisibilityPlayText()" ></div>
+    <div class="mutebutton"><img id="muteButton" src="/static/img/muteAA.png" onclick="toggleMute(); "></div>
+    <!-- <div class="mutetext"><img id="muteText" src="/static/img/mutetext.png"></div> -->
+    <div class="playtext"><img id="playText" src="/static/img/playtext.png" onclick="toggleVisibilityIntro(); playMusic(); toggleVisibilityPlayMusic(); toggleVisibilityPlayText();"></div>
+    <div class="won"><img id="won" src="/static/img/won.png" ></div>
+    <div class="lost"><img id="lost" src="/static/img/lost.png" ></div>
+    <audio id="fireAudio" src="/audio/Audio/firestart.mp3"></audio>
+    <audio id="greenAudio" src="/audio/Audio/green.mp3"></audio>
+    <audio id="redAudio" src="/audio/Audio/red.mp3"></audio>
+    <audio id="clickAudio" src="/audio/Audio/click.mp3"></audio>
+    <audio id="selectAudio" src="/audio/Audio/selection.mp3"></audio>
+    <audio id="computeAudio" src="/audio/Audio/compute.mp3"></audio>
+    
+    <audio id="musicAudio" src="/audio/Audio/music2.mp3"></audio>
+    <script type="text/javascript">
+        function getRandomInt(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;        }
+    </script>
+    <script type="text/python" src="battlemine.py"></script>
+</body>
+</html>

@@ -1,0 +1,560 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 5px;
+    background-image: url('/static/img/Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1800px 1800px; 
+}
+.boardred {
+    position: absolute;
+    width: 940px;  
+    height: 940px; 
+    z-index: 1;}
+.red {visibility: hidden;
+    width: 315px; 
+    height: 315px; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    cursor: pointer;
+    overflow: hidden; 
+    position: absolute; 
+    background-color: transparent;
+    border: none; 
+    outline: none; 
+    box-shadow: none; 
+}
+.boardgreen{position: absolute; width: 930px; height: 930px; z-index: 1; }
+.green {visibility:hidden;
+    width: 315px; 
+    height: 315px; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute; 
+    background-color: transparent;
+    border: none; 
+    outline: none; 
+    box-shadow: none; }
+#cell1Ar {background-image: url('/static/img/reds/Red_1A.png');top: 47px; left: 38px;}
+#cell1Br {background-image: url('/static/img/reds/Red_1B.png');top: 38px; left: 319px;}
+#cell1Cr {background-image: url('/static/img/reds/Red_1C.png');top: 38px; left: 599px;transform: scale(102%)}
+#cell2Ar {background-image: url('/static/img/reds/Red_2A.png');top: 313px; left: 47px;}
+#cell2Br {background-image: url('/static/img/reds/Red_2B.png');top: 315px; left: 320px;}
+#cell2Cr {background-image: url('/static/img/reds/Red_2C.png');top: 319px; left: 597px;
+    transform: scale(106%)}
+#cell3Ar {background-image: url('/static/img/reds/Red_3A.png');top: 580px; left: 33px;}
+#cell3Br {background-image: url('/static/img/reds/Red_3B.png');top: 580px; left: 318px;}
+#cell3Cr {background-image: url('/static/img/reds/Red_3C.png');top: 580px; left: 595px;transform: scale(94%)}
+    
+#cell1Ag {background-image: url('/static/img/greens/Green_1A.png');top: 32px;left: 34px;transform: scale(105%)}
+#cell1Bg {background-image: url('/static/img/greens/Green_1B.png');top: 36px;left: 305px;transform: scale(99%)}
+#cell1Cg {background-image: url('/static/img/greens/Green_1C.png');top: 35px;left: 588px;transform: scale(98%)}
+#cell2Ag {background-image: url('/static/img/greens/Green_2A.png');top: 313px;left: 30px;transform: scale(105%)}
+#cell2Bg {background-image: url('/static/img/greens/Green_2B.png');top: 310px;left: 310px;transform: scale(103%)}
+#cell2Cg {background-image: url('/static/img/greens/Green_2C.png');top: 315px;left: 592px;transform: scale(101%)}
+#cell3Ag {background-image: url('/static/img/greens/Green_3A.png');top: 581px;left: 33px;transform: scale(102%)}
+#cell3Bg {background-image: url('/static/img/greens/Green_3B.png');top: 580px;left: 310px;transform: scale(95%)}
+#cell3Cg {background-image: url('/static/img/greens/Green_3C.png');top: 579px;left: 589px;transform: scale(92%)}
+
+.numbers {position: relative;z-index: 2;left:460px;}
+.n1A{background-image: url('/static/img/greens/1A.png');
+    top: -157px; 
+    left: -800px;
+    transform: scale(50%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n1B{background-image: url('/static/img/greens/1B.png');
+    top: -157px; 
+    left: -520px;
+    transform: scale(50%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n1C{background-image: url('/static/img/greens/1C.png');
+    top: -157px; 
+    left: -245px;
+    transform: scale(50%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n2A{background-image: url('/static/img/greens/2A.png');
+    top: 117px; 
+    left: -805px;
+    transform: scale(50%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n2B{background-image: url('/static/img/greens/2B.png');
+    top: 115px; 
+    left: -520px;
+    transform: scale(40%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n2C{background-image: url('/static/img/greens/2C.png');
+    top: 115px; 
+    left: -245px;
+    transform: scale(45%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n3A{background-image: url('/static/img/greens/3A.png');
+    top: 380px; 
+    left: -800px;
+    transform: scale(45%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n3B{background-image: url('/static/img/greens/3B.png');
+    top: 380px; 
+    left: -520px;
+    transform: scale(45%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.n3C{background-image: url('/static/img/greens/3C.png');
+    top: 380px; 
+    left: -245px;
+    transform: scale(45%);
+    position: absolute; 
+    width: 121px; 
+    height: 49px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+
+
+.selection {position: relative; z-index: 4;left:760px;opacity:.8;}
+#s1A{background-image: url('/static/img/selection.png');
+    top: -573px; 
+    left: -1335px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+
+#s1B{background-image: url('/static/img/selection.png');
+    top: -573px; 
+    left: -1054px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#s1C{background-image: url('/static/img/selection.png');
+    top: -573px; 
+    left: -780px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#s2A{background-image: url('/static/img/selection.png');
+    top: -290px; 
+    left: -1335px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#s2B{background-image: url('/static/img/selection.png');
+    top: -290px; 
+    left: -1050px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#s2C{background-image: url('/static/img/selection.png');
+    top: -290px; 
+    left: -780px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+
+#s3A{background-image: url('/static/img/selection.png');
+    top: -24px; 
+    left: -1335px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#s3B{background-image: url('/static/img/selection.png');
+    top: -25px; 
+    left: -1060px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#s3C{background-image: url('/static/img/selection.png');
+    top: -24px; 
+    left: -780px;
+    transform: scale(55%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+.boardred, .boardgreen, .selection{visibility: hidden;}
+
+#myButton{position: absolute;
+left: -500px;
+top: 500px;
+z-index: 5;
+transform: scale(500%);}
+
+#buttons {position: relative; z-index: 4;left:760px;}
+#_1A{    
+    top: -575px; 
+    left: -1329px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+
+#_1B{    
+    top: -575px; 
+    left: -1050px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#_1C{    
+    top: -575px; 
+    left: -780px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#_2A{    
+    top: -290px; 
+    left: -1335px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#_2B{    
+    top: -290px; 
+    left: -1050px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#_2C{    
+    top: -290px; 
+    left: -780px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+
+#_3A{    
+    top: -24px; 
+    left: -1335px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#_3B{    
+    top: -25px; 
+    left: -1060px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+#_3C{    
+    top: -24px; 
+    left: -780px;
+    transform: scale(35%);
+    position: absolute; 
+    width: 600px; 
+    height: 600px;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; }
+
+
+    #_1A,#_1B,#_1C,#_2A,#_2B,#_2C, #_3A,#_3B,#_3C{
+    background-color: rgba(255, 255, 255, .0);
+    text-align: center;
+    vertical-align: middle;
+    line-height: normal; /* Ensure this matches your cell height for vertical alignment */
+    transition: background-color 0.5s, border-color 0.5s; /* Smooth transition for visual effects */
+    border: 2px solid transparent; /* Adjust if you want visible borders */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+#_1A:hover,#_1B:hover,#_1C:hover,#_2A:hover,#_2B:hover,#_2C:hover, #_3A:hover,#_3B:hover,#_3C:hover{
+    background-image: url('/static/img/black_overlay.png'); 
+    z-index: 6;
+    opacity: 30%;
+    background-size: cover;
+    transition-duration: 300ms;
+    scale:113%;
+    background-color: rgba(255, 255, 255, .3);
+}
+.fire{position:relative; z-index: 2;}
+#fire {
+    visibility: hidden;
+    position: absolute;
+    scale: 250%;
+    top: -630px;
+    left: -57px;
+    width: 100px; /* Adjust the size as needed */
+    cursor: pointer;
+    opacity: .85;
+    
+}
+.fireblue{position:relative; visibility: hidden; z-index: 3;}
+#fireblue {
+    visibility: hidden;
+    position: absolute;
+    scale: 250%;
+    top: -630px;
+    left: -57px;
+    width: 100px; /* Adjust the size as needed */
+    cursor: pointer;
+    opacity: .85;
+}
+.playmusic{position: relative;}
+#playMusic {
+    position: absolute; /* Ensure the div is positioned */
+    top: -500px;
+    left: -1307px;
+    width: 2586px; 
+    height: 2226px;
+    scale:15%; /* Set the height to match your image size */
+    background-image: url('/static/img/playAA.png');
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 5;
+}
+.mutebutton{position: relative;}
+#muteButton {
+    position: absolute; /* Ensure the div is positioned */
+    top: -500px;
+    left: -1307px;
+    width: 2586px; 
+    height: 2226px;
+    scale: 15%; /* Set the height to match your image size */
+    background-image: url('/static/img/muteAA.png');
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.mutetext{position: relative
+}
+#muteText{
+    position:absolute;
+    z-index: 5;
+    scale:13%;
+    top:415px;
+    left: -300px;
+    z-index: 4;
+
+}
+.playtext{position: relative
+}
+#playText{
+    position:absolute;
+    z-index: 5;
+    scale:20%;
+    top:400px;
+    left: -300px;
+}
+.intro2{position: relative;}
+#intro2 {
+    position: absolute;
+    top: -575px;
+    left: -548px;
+    width: 1093px; /* Make the image width 100% of the div */
+    height: 1094px; /* Make the image height 100% of the div */
+    object-fit: cover; /* Ensure the image covers the div without distortion */
+    z-index: 5;
+    scale: 115%;
+}
+
+.terminal2{position: relative;}
+#terminal2 {
+    position: absolute; /* Ensure the div is positioned */
+    top: -1650px;
+    left: -968px;
+    width: 2586px; 
+    height: 2226px;
+    scale: 12.5%; /* Set the height to match your image size */
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .95;
+}
+.terminal2aHit{position: relative;}
+#terminal2aHit{visibility: hidden;
+    position: absolute; /* Ensure the div is positioned */
+    top: -1650px;
+    left: -968px;
+    width: 2586px; 
+    height: 2226px;
+    scale: 12.5%; /* Set the height to match your image size */
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .95;
+}
+.terminal2aMiss{position: relative;}
+#terminal2aMiss{visibility: hidden;
+    position: absolute; /* Ensure the div is positioned */
+    top: -1650px;
+    left: -968px;
+    width: 2586px; 
+    height: 2226px;
+    scale: 12.5%; /* Set the height to match your image size */
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .9;
+}
+.terminal2aIncoming{position: relative;}
+#terminal2aIncoming{visibility: hidden;
+    position: absolute; /* Ensure the div is positioned */
+    top: -1650px;
+    left: -968px;
+    width: 2586px; 
+    height: 2226px;
+    scale: 12.5%; /* Set the height to match your image size */
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .9;
+}
+.terminal1{position: relative;}
+#terminal1 {
+    position: absolute; /* Ensure the div is positioned */
+    top: -1670px;
+    left: -1523px;
+    width: 2586px; 
+    height: 2226px;
+    scale: 15.5%; /* Set the height to match your image size */
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .8;
+}
+.terminal1aIncoming{position: relative;}
+#terminal1aIncoming {visibility: hidden;
+    position: absolute; /* Ensure the div is positioned */
+    top: -1670px;
+    left: -1523px;
+    width: 2586px; 
+    height: 2226px;
+    scale: 15.5%; /* Set the height to match your image size */
+    background-size: cover; /* Ensure the image covers the div */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: .8;
+}
+
+.won{position: relative;}
+#won {visibility: hidden;
+    position: absolute;
+    top: -575px;
+    left: -548px;
+    width: 1093px; /* Make the image width 100% of the div */
+    height: 1094px; /* Make the image height 100% of the div */
+    object-fit: cover; /* Ensure the image covers the div without distortion */
+    z-index: 5;
+    scale: 120%;
+    opacity: 1
+
+}
+.lost{position: relative;}
+#lost {visibility: hidden;
+    position: absolute;
+    top: -575px;
+    left: -548px;
+    width: 1093px; /* Make the image width 100% of the div */
+    height: 1094px; /* Make the image height 100% of the div */
+    object-fit: cover; /* Ensure the image covers the div without distortion */
+    z-index: 5;
+    scale: 120%;
+    opacity: 1;
+}
